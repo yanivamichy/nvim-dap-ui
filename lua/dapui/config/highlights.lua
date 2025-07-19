@@ -28,7 +28,7 @@ function M.setup()
   hi default link DapUISource                  Define
   hi default link DapUILineNumber              LineNr
   hi default link DapUIFloatNormal             NormalFloat
-  hi default link DapUIFloatBorder             Identifier
+  hi default link DapUIFloatBorder             FloatBorder
   hi default link DapUIWatchesEmpty            PreProc
   hi default link DapUIWatchesValue            Statement
   hi default link DapUIWatchesError            PreProc
