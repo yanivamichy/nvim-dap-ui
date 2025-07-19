@@ -45,7 +45,7 @@ return function(client, send_ready)
         render_frames.render(
           canvas,
           thread.id,
-          subtle_threads[thread.id] or false,
+          not subtle_threads[thread.id] or false,
           indent + config.render.indent
         )
 
