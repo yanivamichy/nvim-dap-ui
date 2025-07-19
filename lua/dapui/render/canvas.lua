@@ -32,6 +32,7 @@ function Canvas:new()
     prompt = nil,
     valid = true,
     expand_lines = config.expand_lines,
+    links = {},
   }
   setmetatable(canvas, self)
   self.__index = self

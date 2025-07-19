@@ -53,7 +53,11 @@ return function(client, send_ready)
 
         canvas:write(
           frame.name,
-          { group = frame.id == current_frame_id and "DapUICurrentFrameName" or "DapUIFrameName" }
+          {
+            group = frame.id == current_frame_id and "DapUICurrentFrameName"
+              or frame.presentationHint == "subtle" and "DapUIFrameNameNotMyCode"
+              or "DapUIFrameName",
+          }
         )
         canvas:write(" ")
 

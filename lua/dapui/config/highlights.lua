@@ -24,6 +24,7 @@ function M.setup()
   hi default link DapUIThread                  Identifier
   hi default link DapUIStoppedThread           Function
   hi default link DapUIFrameName               Normal
+  hi default link DapUIFrameNameNotMyCode      Conceal
   hi default link DapUISource                  Define
   hi default link DapUILineNumber              LineNr
   hi default link DapUIFloatNormal             NormalFloat
