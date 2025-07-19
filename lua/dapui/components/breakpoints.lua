@@ -118,6 +118,7 @@ return function(client, send_ready)
           )
           if vim.tbl_count(text) ~= 0 then
             canvas:add_mapping("open", jump_to_bp)
+            canvas:add_link(bufname, bp.line, canvas:length())
             canvas:add_mapping("remove", function()
               client.breakpoints.remove(buffer, bp.line)
               send_ready()

@@ -68,6 +68,7 @@ return function(client, send_ready)
           canvas:write(frame.line, { group = "DapUILineNumber" })
         end
         canvas:add_mapping("open", util.partial(client.lib.jump_to_frame, frame, true))
+        canvas:add_link(frame.source.path, frame.line, canvas:length())
         canvas:write("\n")
       end
 

@@ -26,6 +26,7 @@ return function(client)
     local canvas = Canvas.new()
     threads.render(canvas)
     canvas:render_buffer(dapui.elements.stacks.buffer(), config.element_mapping("stacks"))
+    dapui.elements.stacks.canvas = canvas
   end
 
   ---@nodoc

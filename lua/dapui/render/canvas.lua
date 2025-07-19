@@ -13,6 +13,7 @@ M.namespace = api.nvim_create_namespace("dapui")
 ---@field prompt table
 ---@field valid boolean
 ---@field expand_lines boolean
+---@field links table
 local Canvas = {}
 
 ---@type dapui.Action[]
@@ -101,6 +102,13 @@ function Canvas:add_mapping(action, callback, opts)
   end
   self.mappings[action][line] = self.mappings[action][line] or {}
   self.mappings[action][line][#self.mappings[action][line] + 1] = callback
+end
+
+function Canvas:add_link(path, target_line, line)
+  self.links = self.links or {}
+  self.links[line] = self.links[line] or {}
+  self.links[line].path = path
+  self.links[line].line = target_line
 end
 
 function Canvas:set_prompt(text, callback, opts)

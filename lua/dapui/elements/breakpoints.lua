@@ -30,6 +30,7 @@ return function(client)
     local canvas = Canvas.new()
     breakpoints.render(canvas)
     canvas:render_buffer(dapui.elements.breakpoints.buffer(), config.element_mapping("breakpoints"))
+    dapui.elements.breakpoints.canvas = canvas
   end
 
   ---@nodoc

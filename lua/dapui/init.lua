@@ -129,7 +129,7 @@ end
 ---@param elem_name string
 ---@param args? dapui.FloatElementArgs
 function dapui.float_element(elem_name, args)
-  nio.run(function()
+  return nio.run(function()
     elem_name = elem_name or query_elem_name()
     if not elem_name then
       return
@@ -149,6 +149,9 @@ function dapui.float_element(elem_name, args)
     local line_no = nio.fn.screenrow()
     local col_no = nio.fn.screencol()
     local position = { line = line_no, col = col_no }
+    if type(args.position) ~= "string" then
+      position = args.position
+    end
     elem.render()
     args = vim.tbl_deep_extend(
       "keep",
@@ -386,7 +389,7 @@ end
 ---@field breakpoints dapui.elements.breakpoints
 ---@field repl dapui.elements.repl
 ---@field scopes dapui.elements.scopes
----@field stack dapui.elements.stacks
+---@field stacks dapui.elements.stacks
 ---@field watches dapui.elements.watches
 ---@field console dapui.elements.console
 dapui.elements = setmetatable({}, {
